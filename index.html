@@ -4,15 +4,15 @@
     <title>Angular port of mailcheck library</title>
 </head>
 
-<body>
+<body ng-app="myApp">
 
-    <mailcheck></mailcheck>
     <input type="email" mailcheck />
 
     <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="mailcheck.directive.js"></script>
+    <script src="mailcheck.factory.js"></script>
 </body>
 
 </html>
