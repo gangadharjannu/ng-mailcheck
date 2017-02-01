@@ -1,6 +1,6 @@
 (function () {
-    mailcheckService.$inject = [];
-    function mailcheckService() {
+    mailcheckFactory.$inject = [];
+    function mailcheckFactory() {
         var Mailcheck = {
             domainThreshold: 2,
             secondLevelThreshold: 2,
@@ -279,6 +279,6 @@
 
     angular
         .module('myApp')
-        .factory('mailcheckService', mailcheckService);
+        .factory('mailcheckFactory', mailcheckFactory);
 
 } ());
