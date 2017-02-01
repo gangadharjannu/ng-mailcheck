@@ -1,7 +1,7 @@
 
-(function () {
-    mailcheck.$inject = ['$compile', '$timeout', 'mailcheckService'];
-    function mailcheck($compile, $timeout, mailcheckService) {
+(function() {
+    mailcheck.$inject = ['$compile', '$timeout', 'mailcheckFactory'];
+    function mailcheck($compile, $timeout, mailcheckFactory) {
         var DDO = {
             restrict: 'EA',
             require: '?ngModel',
@@ -9,11 +9,11 @@
             bindToController: {
                 mailcheck: '='
             },
-            controller: function () {
+            controller: function() {
 
             },
             controllerAs: 'MC',
-            link: function (scope, element, attrs, ngModel) {
+            link: function(scope, element, attrs, ngModel) {
                 var result = null,
                     templateStr = [
                         '<span ng-show="completed">',
@@ -29,18 +29,18 @@
 
                 /* Implementation */
                 element.after($compile(options.templateStr)(scope))
-                element.on('blur', function (event) {
+                element.on('blur', function(event) {
                     options.email = ngModel.$viewValue;
                     scope.completed = false;
                     scope.suggestion = false;
-                    result = mailcheck.run(options);
-                    scope.$evalAsync(function () {
+                    result = mailcheckFactory.run(options);
+                    scope.$evalAsync(function() {
                         scope.suggestion = result;
                         scope.completed = true;
                     });
 
                 });
-                scope.correctMe = function (val) {
+                scope.correctMe = function(val) {
                     ngModel.$setViewValue(val);
                     ngModel.$render();
                     scope.completed = false;
