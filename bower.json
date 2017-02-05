@@ -1,7 +1,7 @@
 {
   "name": "ng-mailcheck",
   "description": "AngularJS 1 directive for mailcheck plugin",
-  "main": "mailcheck.directive.js",
+  "main": "",
   "authors": [
     "gangadharjannu <gangadhar014@gmail.com>"
   ],

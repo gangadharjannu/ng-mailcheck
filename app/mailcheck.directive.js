@@ -15,7 +15,7 @@
                 if (!attrs.ngModel) {
                     throw new Error("element must contain ng-model attribute");
                 }
-                if (element[0].nodeName !== "INPUT" || restrictedTypes.test(attrs.type)) {
+                if (element[0].nodeName !== "INPUT" || !restrictedTypes.test(attrs.type)) {
                     throw new Error("mailcheck element is limited to text, email, search input types only");
                 }
 
