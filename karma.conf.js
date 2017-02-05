@@ -17,11 +17,10 @@ module.exports = function (config) {
     files: [
       './node_modules/angular/angular.js',
       './node_modules/angular-mocks/angular-mocks.js',
-      './app.js',
-      './mailcheck.factory.js',
-      './mailcheck.directive.js',
-      './test/mailcheck.factory.spec.js',
-      './test/mailcheck.directive.spec.js'
+      './app/index.html',
+      './dist/ng-mailcheck.js',
+      './app/test/mailcheck.factory.spec.js',
+      './app/test/mailcheck.directive.spec.js'
     ],
 
 
