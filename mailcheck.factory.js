@@ -278,7 +278,7 @@
     }
 
     angular
-        .module('myApp')
+        .module('ngMailcheck')
         .factory('mailcheckFactory', mailcheckFactory);
 
 } ());
