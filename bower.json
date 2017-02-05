@@ -1,18 +1,25 @@
 {
-  "name": "angular-mailcheck",
-  "description": "",
-  "main": "angular.min.js",
+  "name": "ng-mailcheck",
+  "description": "AngularJS 1 directive for mailcheck plugin",
+  "main": "mailcheck.directive.js",
   "authors": [
     "gangadharjannu <gangadhar014@gmail.com>"
   ],
-  "license": "ISC",
-  "homepage": "",
-  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/gangadharjannu/ng-mailcheck",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "keywords": [
+    "mailcheck",
+    "angular-directive",
+    "ng-mailcheck"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
 }
