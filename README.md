@@ -4,7 +4,7 @@ AngularJS 1 directive for popular [mailcheck](https://github.com/mailcheck/mailc
 # Features
 ng-mailcheck supports all features that are supported by [mailcheck](https://github.com/mailcheck/mailcheck) library. In addition to that 
 * Now user can replace existing options or extend the default options using **replaceOptions** option.  
-    * true=>replace options, false=>extend options     
+    * true => replace options, false => extend options     
 * Works for email, search, text input types
 * Updates ngModel with email suggestion on click
 
@@ -22,19 +22,21 @@ ng-mailcheck supports all features that are supported by [mailcheck](https://git
 * Below is the sample object for options attribute
     ```javascript 
     {
-    domains: [],                                // www.gmail.in
-    secondLevelDomains: [],                     // gmail
-    topLevelDomains: [],                        // in
-    distanceFunction: function () { },          // string distance function
-    templateStr: "",                            // template string for email suggestion
-    replaceOptions: true                        // true=>replace options, false=>concat options
+      domains: [],                                // www.gmail.in
+      secondLevelDomains: [],                     // gmail
+      topLevelDomains: [],                        // in
+      distanceFunction: function () { },          // string distance function
+      templateStr: "",                            // template string for email suggestion
+      replaceOptions: true                        // true=>replace options, false=>concat options
     }
-    ```
+    ```  
+
 # Demo
 Play around [jsbin](http://jsbin.com/mebewud/edit?html,js,output) 
 
 # Tests 
 Run `karma start` to run tests.  Test cases are written in `app/test` folder.
+
 # Thanks
 [mailcheck - https://github.com/mailcheck/mailcheck](https://github.com/mailcheck/mailcheck)
 
