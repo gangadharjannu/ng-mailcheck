@@ -1,4 +1,3 @@
-
 (function () {
     mailcheck.$inject = ['$compile', '$timeout', 'mailcheckFactory'];
     function mailcheck($compile, $timeout, mailcheckFactory) {
@@ -12,7 +11,7 @@
             controller: function () { },
             controllerAs: 'MC',
             link: function (scope, element, attrs, ctrls) {
-                // ngModel is an array [0] contains ngModel [1] contains directive's controller
+                // ctrls is an array. [0] contains ngModel, [1] contains directive's controller
                 var ngModelCtrl = ctrls[0],
                     MC = ctrls[1],
                     result = null,
@@ -25,11 +24,6 @@
                     mailcheckDefaultOptions;
 
                 if (!options.replaceOptions) {
-                    // mailcheckDefaultOptions = angular.copy({
-                    //     domains: mailcheckFactory.defaultDomains,
-                    //     secondLevelDomains: mailcheckFactory.defaultSecondLevelDomains,
-                    //     topLevelDomains: mailcheckFactory.defaultTopLevelDomains
-                    // });
                     mailcheckDefaultOptions = {
                         domains: mailcheckFactory.defaultDomains,
                         secondLevelDomains: mailcheckFactory.defaultSecondLevelDomains,
@@ -79,7 +73,7 @@
     angular
         .module('ngMailcheck', [])
         .directive('mailcheck', mailcheck);
-}())
+}());
 (function () {
     mailcheckFactory.$inject = [];
     function mailcheckFactory() {
