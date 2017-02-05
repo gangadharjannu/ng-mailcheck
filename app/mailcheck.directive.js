@@ -11,6 +11,14 @@
             controller: function () { },
             controllerAs: 'MC',
             link: function (scope, element, attrs, ctrls) {
+                var restrictedTypes = /email|search|text/i;
+                if (!attrs.ngModel) {
+                    throw new Error("element must contain ng-model attribute");
+                }
+                if (element[0].nodeName !== "INPUT" || restrictedTypes.test(attrs.type)) {
+                    throw new Error("mailcheck element is limited to text, email, search input types only");
+                }
+
                 // ctrls is an array. [0] contains ngModel, [1] contains directive's controller
                 var ngModelCtrl = ctrls[0],
                     MC = ctrls[1],
