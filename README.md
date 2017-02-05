@@ -19,8 +19,8 @@ ng-mailcheck supports all features that are supported by [mailcheck](https://git
 * Put `ngMailcheck` module as dependency `angular.module('yourModule', ['ngMailcheck'])`
 * Add mailcheck as an attribute `<input type="email" ng-model="email" mailcheck options="{}">`
 * You can optionally pass options to mailcheck using `options` attribute
-* Below is the sample object for options attribute
-    ```javascript 
+* Below is the sample object for options attribute  
+    ```javascript  
     {
       domains: [],                                // www.gmail.in
       secondLevelDomains: [],                     // gmail
@@ -29,7 +29,7 @@ ng-mailcheck supports all features that are supported by [mailcheck](https://git
       templateStr: "",                            // template string for email suggestion
       replaceOptions: true                        // true=>replace options, false=>concat options
     }
-    ```  
+    ```
 
 # Demo
 Play around [jsbin](http://jsbin.com/mebewud/edit?html,js,output) 
