@@ -1,4 +1,3 @@
-
 (function () {
     mailcheck.$inject = ['$compile', '$timeout', 'mailcheckFactory'];
     function mailcheck($compile, $timeout, mailcheckFactory) {
@@ -74,4 +73,4 @@
     angular
         .module('ngMailcheck', [])
         .directive('mailcheck', mailcheck);
-}())
+}());
