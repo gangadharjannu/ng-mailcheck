@@ -32,3 +32,11 @@ ng-mailcheck supports all features that are supported by [mailcheck](https://git
     ```
 # Demo
 Play around [jsbin](http://jsbin.com/mebewud/edit?html,js,output) 
+
+# Tests 
+Run `karma start` to run tests.  Test cases are written in `app/test` folder.
+# Thanks
+[mailcheck - https://github.com/mailcheck/mailcheck](https://github.com/mailcheck/mailcheck)
+
+# License
+Released under the MIT License.
