@@ -1,5 +1,5 @@
 
-(function() {
+(function () {
     mailcheck.$inject = ['$compile', '$timeout', 'mailcheckFactory'];
     function mailcheck($compile, $timeout, mailcheckFactory) {
         var DDO = {
@@ -9,23 +9,14 @@
             bindToController: {
                 options: '='
             },
-            controller: function($scope, $element) {
-                var MC = this;
-                MC.completed = false;
-                MC.suggestion = false;
-            },
+            controller: function () { },
             controllerAs: 'MC',
-            link: function(scope, element, attrs, ctrls) {
+            link: function (scope, element, attrs, ctrls) {
                 // ngModel is an array [0] contains ngModel [1] contains directive's controller
                 var ngModelCtrl = ctrls[0],
                     MC = ctrls[1],
                     result = null,
-                    templateStr = [
-                        '<p ng-show="MC.completed">',
-                        '<span ng-show="MC.suggestion">Did you mean <b ng-click="correctMe(MC.suggestion.full)"><i ng-bind="MC.suggestion.full"></i></b>?</span>',
-                        '<span ng-show="!MC.suggestion">No Suggestions :(</span>',
-                        '</p>'
-                    ].join(''),
+                    templateStr = MC.options.templateStr || '<p ng-show="MC.suggestion.domain">Did you mean <b ng-click="MC.correctMe(MC.suggestion.full)"><i ng-bind="MC.suggestion.full"></i></b>?</p>',
                     defaultOptions = {
                         templateStr: templateStr,
                         replaceOptions: true
@@ -48,25 +39,27 @@
                     options = angular.extend({}, defaultOptions, concatOptions(MC.options, mailcheckDefaultOptions));
                 }
                 /* Implementation */
+
+                MC.suggestion = false;
+
                 element.after($compile(options.templateStr)(scope))
-                element.on('blur', function() {
+                element.on('blur', function () {
                     options.email = ngModelCtrl.$viewValue;
-                    MC.completed = false;
                     MC.suggestion = false;
                     result = mailcheckFactory.run(options);
-                    scope.$evalAsync(function() {
+                    scope.$evalAsync(function () {
                         MC.suggestion = result;
-                        MC.completed = true;
                     });
 
                 });
-                scope.correctMe = function(val) {
+                MC.correctMe = function (val) {
                     ngModelCtrl.$setViewValue(val);
                     ngModelCtrl.$render();
-                    scope.$evalAsync(function() {
-                        MC.completed = false;
+                    scope.$evalAsync(function () {
+                        MC.suggestion.domain = null;
                     });
                 }
+
                 /* utility function for concatenating user specified options with mailcheck default options */
                 function concatOptions(dest, src) {
                     var option;
@@ -84,6 +77,6 @@
         return DDO;
     }
     angular
-        .module('myApp')
+        .module('ngMailcheck', [])
         .directive('mailcheck', mailcheck);
-} ())
+}())
