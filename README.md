@@ -6,19 +6,29 @@ ng-mailcheck supports all features that are supported by [mailcheck](https://git
 * Now user can replace existing options or extend the default options using **replaceOptions** option.  
     * true=>replace options, false=>extend options     
 * Works for email, search, text input types
+* Updates ngModel with email suggestion on click
 
+# Usage
+* Getting ng-mailcheck
+    * **Using bower**
+        * `bower install ng-mailcheck`
+        * Include the script tag as `<script src="bower_components/ng-mailcheck/dist/ng-mailcheck.min.js"></script>` after your module declaration
+    * **Manual Installation**
+        * download [ng-mailcheck.min.js](https://rawgit.com/gangadharjannu/ng-mailcheck/master/dist/ng-mailcheck.min.js).
+        * Include the script `<script src="path/ng-mailcheck.min.js"></script>` after your module declaration
+* Put `ngMailcheck` module as dependency `angular.module('yourModule', ['ngMailcheck'])`
+* Add mailcheck as an attribute `<input type="email" ng-model="email" mailcheck options="{}">`
+* You can optionally pass options to mailcheck using `options` attribute
+* Below is the sample object for options attribute
+    ```javascript 
+    {
+    domains: [],                                // www.gmail.in
+    secondLevelDomains: [],                     // gmail
+    topLevelDomains: [],                        // in
+    distanceFunction: function () { },          // string distance function
+    templateStr: "",                            // template string for email suggestion
+    replaceOptions: true                        // true=>replace options, false=>concat options
+    }
+    ```
 # Demo
 Play around [jsbin](http://jsbin.com/mebewud/edit?html,js,output) 
-
-***
-checklist for implementing mailcheck directive on an element:  
-* text or email search input types only.
-* must have ngModel
-* can have optional attributes
-    * domains                   // www.gmail.com
-    * secondLevelDomains        // gmail
-    * topLevelDomains           // com
-    * distanceFunction          // string distance function
-    * templateStr               // suggestion template string
-    * replaceOptions            // true=>replace options, false=>extend options     
-* Update ngModel with email suggestion on email selection
