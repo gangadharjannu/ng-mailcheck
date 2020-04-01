@@ -1,10 +1,11 @@
 {
   "name": "angular-mailcheck",
   "version": "1.0.0",
-  "description": "",
+  "description": "AngularJS 1 directive for popular [mailcheck](https://github.com/mailcheck/mailcheck) library.",
   "main": "angular.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint app",
+    "build": "npx gulp build"
   },
   "keywords": [],
   "author": "",
@@ -12,17 +13,31 @@
   "devDependencies": {
     "angular": "^1.6.1",
     "angular-mocks": "^1.6.1",
-    "eslint": "^3.14.1",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-es5": "^1.2.0",
+    "eslint-plugin-angular": "^4.0.1",
+    "eslint-plugin-es5": "^1.5.0",
+    "eslint-plugin-react": "^7.19.0",
+    "gulp": "^4.0.2",
     "gulp-cli": "^1.2.2",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "^2.0.1",
-    "jasmine-core": "^2.5.2",
-    "karma": "^1.4.1",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0",
+    "jasmine-core": "^2.99.1",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
     "karma-spec-reporter": "0.0.26"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gangadharjannu/ng-mailcheck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gangadharjannu/ng-mailcheck/issues"
+  },
+  "homepage": "https://github.com/gangadharjannu/ng-mailcheck#readme"
 }
